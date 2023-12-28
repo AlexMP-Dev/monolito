@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head th:fragment="site-head">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Imprime SAC</title>
+    <link rel="icon" th:href="@{/images/icono-app.png}" />
+    <style type="text/css">
+      body {
+        min-height: 50rem;
+        padding-top: 4.5rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header th:fragment="site-header">
+      <nav
+        class="navbar navbar-expand-md navbar-dark bg-dark container fixed-top"
+      >
+        <div class="container-fluid">
+          <a class="navbar-brand" th:href="@{/}">
+            <img
+              th:src="@{/images/icono-app.png}"
+              width="30"
+              height="30"
+              class="d-inline-block align-text-top"
+              alt=""
+            />
+            Imprime SAC
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="javascript:void(0)"
+                  id="navbarDropdownAtencion"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Atencion
+                </a>
+                <ul
+                  class="dropdown-menu"
+                  aria-labelledby="navbarDropdownAtencion"
+                >
+                  <li>
+                    <a class="dropdown-item" th:href="@{/empleado/index}">
+                      Registrar Empleado
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" th:href="@{/tarifa/index}">
+                      Registrar Tarifa
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" th:href="@{/fase/index}">
+                      Registrar Fase</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" th:href="@{/cliente/index}">
+                      Registrar Cliente</a
+                    >
+                  </li>
+                  <li>
+                    <hr class="dropdown-divider" />
+                  </li>
+                  <li><a class="dropdown-item" href="javascript:void(0)"> Salir</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="javascript:void(0)"
+                  id="navbarDropdownProduccion"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Producción
+                </a>
+                <ul
+                  class="dropdown-menu"
+                  aria-labelledby="navbarDropdownProduccion"
+                >
+                  <li>
+                    <a class="dropdown-item" th:href="@{/trabajo/index}">
+                      Registrar Orden</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" th:href="@{/cliente/monitorear}">
+                      Monitorear Orden</a
+                    >
+                  </li>
+                  <li>
+                    <hr class="dropdown-divider" />
+                  </li>
+                  <li>
+                    <a class="dropdown-item" th:href="@{/}">
+                      Registrar Satisfacción</a
+                    >
+                  </li>
+                </ul>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="javascript:void(0)"
+                  id="navbarDropdownPagos"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Pagos
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownPagos">
+                  <li>
+                    <a class="dropdown-item" th:href="@{/trabajo/index}">
+                      Registrar Pago de Adelanto</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" th:href="@{/cliente/monitorear}">
+                      Registrar Pago de Saldo</a
+                    >
+                  </li>
+                  <li>
+                    <hr class="dropdown-divider" />
+                  </li>
+                  <li>
+                    <a class="dropdown-item" th:href="@{/}">
+                      Reporte de Ingresos</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main th:fragment="site-main" class="container p-0">
+      <div class="text-center bg-light p-5 rounded">
+        <img th:src="@{/images/icono-app.png}" alt="" class="img img-fluid" />
+        <h1 class="mt-4 pt-4">Bienvenidos a Imprime SAC</h1>
+        <p class="lead">
+          Ejemplo de Aplicacion WEB-MVC basada en Arquitectura Monolitica
+        </p>
+        <br /><br />
+        <a class="btn btn-lg btn-primary" th:href="@{/}" role="button">
+          Continuar &raquo;
+        </a>
+      </div>
+    </main>
+
+    <footer th:fragment="site-footer" id="pie">
+      <div class="container fixed-bottom">
+        <p>&copy; Sistemas</p>
+      </div>
+    </footer>
+
+    <div th:fragment="site-bootstrap">
+		  <!--<script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"
+      ></script>-->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    </div>
+  </body>
+</html>
