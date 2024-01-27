@@ -40,4 +40,9 @@ public class OrdenServiceImpl implements OrdenService {
         ordenRepository.deleteById(id);
     }
 
+    @Override
+    public List<Orden> listarPorClienteId(Long id) {
+        return ordenRepository.findByClienteId(id);
+    }
+
 }
