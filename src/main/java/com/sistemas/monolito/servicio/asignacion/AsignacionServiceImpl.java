@@ -40,4 +40,11 @@ public class AsignacionServiceImpl implements AsignacionService {
         asignacionRepository.deleteById(id);
     }
 
+    @Override
+    public List<Asignacion> listarPorOrdenId(Long id) {
+        return asignacionRepository.findByOrdenId(id);
+    }
+
+
+
 }
