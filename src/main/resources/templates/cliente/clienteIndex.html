@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
-<head th:replace="disenoBase::site-head"></head>
+<head th:replace="~{disenoBase::site-head}"></head>
 
 <body>
-    <header th:replace="disenoBase::site-header"></header>
+    <header th:replace="~{disenoBase::site-header}"></header>
     <main class="container p-0" role="main">
         <div class="container" id="divCasoForm">
             <article>
@@ -33,17 +33,17 @@
                             <td th:text="${cliente.apellido}"></td>
                             <td th:text="${cliente.nombre}"></td>
                             <td th:text="${cliente.dni}"></td>
-                            <td th:text="${c#calendars.format(
+                            <td th:text="${#calendars.format(
                                     cliente.fechaNacimiento, 'dd/MM/yyyy')}"></td>
                             <td th:text="${cliente.celular}"></td>
                             <td th:text="${cliente.email}"></td>
                             <td>
-                                <a class="btn btn-outline-warning btn-sm" th:href="@{/cliente/editar/}+${cliente.id}">
+                                <a class="btn btn-outline-warning btn-sm" th:href="@{/client/edit/}+${cliente.id}">
                                     Editar
                                 </a>
                             </td>
                             <td>
-                                <a class="btn btn-outline-danger btn-sm" th:href="@{/cliente/eliminar/}+${cliente.id}">
+                                <a class="btn btn-outline-danger btn-sm" th:href="@{/client/eliminar/}+${cliente.id}">
                                     Eliminar
                                 </a>
                             </td>
@@ -52,7 +52,7 @@
                     <tfoot>
                         <tr>
                             <td colspan="8">
-                                <a class="btn btn-outline-success" th:href="@{/cliente/nuevo}" role="button">
+                                <a class="btn btn-outline-success" th:href="@{/client/nuevo}" role="button">
                                     Agregar Cliente
                                 </a>
                                 <a class="btn btn-outline-secondary" 
@@ -60,7 +60,7 @@
                                 role="button">
                                 Regresar
                                 </a>
-                            </td">
+                            </td>
                         </tr>
                     </tfoot>
                 </table>

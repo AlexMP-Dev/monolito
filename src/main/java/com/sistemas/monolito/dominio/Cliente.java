@@ -32,6 +32,10 @@ public class Cliente {
     @NotBlank(message = "El nombre no debe estar en blanco")
     private String nombre;
 
+    @Column(length = 8)
+    @NotBlank(message = "El dni no debe estar en blanco")
+    private String dni;
+
     @Column(length = 60)
     @NotBlank(message = "El apellido no debe estar en blanco")
     private String apellido;

@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
-<head th:replace="disenoBase::site-head"></head>
+<head th:replace="~{disenoBase::site-head}"></head>
 
 <body>
-    <header th:replace="disenoBase::site-header"></header>
+    <header th:replace="~{disenoBase::site-header}"></header>
     <main class="container p-0" role="main">
         <div class="container bg-light p-5 rounded mx-auto" id="divCasoForm">
             <h4 class="text-primary">Datos de Cliente</h4>
             <hr>
-            <form class="row g-3" th:object="${cliente}" th:action="${/cliente.id != null} ? 
-                @{/cliente/editar} : @{/cliente/nuevo}" method="post">
+            <form class="row g-3" th:object="${cliente}" th:action="${cliente.id != null} ? 
+                @{/client/editar} : @{/client/nuevo}" method="post">
 
                 <div class="hide">
                     <!--
@@ -109,7 +109,7 @@
                     <button type="submit" class="btn btn-outline-primary">
                         Aceptar
                     </button>
-                    <a class="btn btn-outline-secondary" th:href="@{/cliente/index}" role="button">
+                    <a class="btn btn-outline-secondary" th:href="@{/client/index}" role="button">
                         Cerrar
                     </a>
                 </div>
